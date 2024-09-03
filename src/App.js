@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+//コンポーネント
+// コンポーネントを作成する際は、以下の点に注意
+// React要素を返却
+// コンポーネント名は必ず大文字で始めること(UpperCamelCaseが望まし)
 
-function App() {
+import React from "react";
+import Form from "./Form";
+import List from "./List";
+
+const App = () => {
+  const todos = [
+    {
+      content: "課題をする",
+    },
+    {
+      content: "選択をする",
+    },
+    {
+      content: "電話をする",
+    },
+    {
+      content: "夕飯を作る",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Todo App</h1>
+      <Form></Form>
+      <List todos={todos}></List>
     </div>
   );
-}
+};
 
 export default App;
